@@ -1,0 +1,43 @@
+@model CMSApp.Models.Page
+
+@{
+    if (!String.IsNullOrEmpty(Model.Title)) {
+        ViewData["Title"] = Model.Title.ToString();
+    }
+    List<NavLink> list = null;
+    if (ViewData["Links"] != null) {
+        list = (List<NavLink>)ViewData["Links"];
+    }
+}
+@section AddToHead{
+    @{ if (!String.IsNullOrEmpty(Model.Description))
+        {
+<meta name="description" content="@Model.Description.ToString()" />   
+            }
+        }
+}
+@section NavLinks{
+    @{ if (Model.NavLinksParent!=null&& Model.NavLinksParent.Count>0)
+        {
+
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn " data-target="#" href="/page.html">
+                NavLinks <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                @foreach(var link in list) { 
+                <li><a href="~/CustomPage/@link.Page.UrlName">@link.Title</a></li>
+                }
+                </ul>
+                }
+                }
+                }
+
+                <div id="content" class="container" style="margin-top:20px">
+                    @Html.Raw(Model.Content)
+                </div>
+                <div id="relpages">
+                    @await Component.InvokeAsync("RelPages", new { id = Model.PageId })
+                </div>
+                @section Scripts {
+                    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                }

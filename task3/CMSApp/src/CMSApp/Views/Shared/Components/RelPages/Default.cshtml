@@ -1,0 +1,12 @@
+@model IEnumerable<CMSApp.Models.Page>
+
+
+
+<h4>Related Pages</h4>
+
+<ul>
+    @foreach (var page in Model)
+    {
+        <li><a href="~/CustomPage/@page.UrlName">@page.UrlName</a></li>
+    }
+</ul>

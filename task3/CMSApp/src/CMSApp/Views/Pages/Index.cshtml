@@ -1,0 +1,153 @@
+@model CMSApp.Models.MyIndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{ 
+    var currOrder = "";
+    if (!String.IsNullOrEmpty(Model.Pager.sortOrder))
+    {
+        currOrder = string.Concat(currOrder, "&sortOrder=", Model.Pager.sortOrder);
+    }
+    if (!String.IsNullOrEmpty(Model.Pager.searchUrl))
+    {
+        currOrder = string.Concat(currOrder, "&searchUrl=", Model.Pager.searchUrl);
+    }
+    if (!String.IsNullOrEmpty(Model.Pager.searchTitle))
+    {
+        currOrder = string.Concat(currOrder, "&searchTitle=", Model.Pager.searchTitle);
+    }
+    if (Model.chosenId != null)
+    {
+        currOrder = string.Concat(currOrder, "&chosenId=", Model.chosenId);
+    }
+}
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Pages" asp-action="Index">
+    <p>
+        Title: <input type="text" name="SearchTitle">
+        Url Name: <input type="text" name="SearchUrl">
+        @{if (Model.chosenId != null)
+            {
+                <input type="hidden" name="chosenId" value="@Model.chosenId">
+            } }
+        @{if (!String.IsNullOrEmpty(Model.Pager.sortOrder))
+            {
+                <input type="hidden" name="sortOrder" value="@Model.Pager.sortOrder">
+            } }
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+@{
+    if (Model.chosenId != null)
+    {
+            <p>
+                Page to Relate: @Model.chosenUrl
+                <a asp-action="Index">Remove</a>
+            </p>
+    }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.ActionLink("Content", "Index", new { page = Model.Pager.CurrentPage, sortOrder = ViewBag.ContentSortParm, chosenId = Model.chosenId })
+            </th>
+            <th>
+                @Html.ActionLink("Description", "Index", new { page = Model.Pager.CurrentPage, sortOrder = ViewBag.DescrSortParm, chosenId = Model.chosenId })
+            </th>
+            <th>
+               @Html.ActionLink("Title", "Index", new { page = Model.Pager.CurrentPage, sortOrder = ViewBag.TitleSortParm, chosenId = Model.chosenId })
+            </th>
+            <th>
+                @Html.ActionLink("Url Name", "Index", new { page = Model.Pager.CurrentPage, sortOrder = ViewBag.UrlSortParm, chosenId = Model.chosenId })
+            </th>
+            <th></th>
+           @{if (Model.chosenId != null)
+               {
+            <th>Relation</th>
+                   } }
+        </tr>
+    </thead>
+    <tbody>
+       
+            @foreach (var item in Model.Items)
+            {  <tr>
+                <td>
+                    @{if (item.Content != null) { 
+
+                        if (item.Content.Length < 15)
+                        {
+                    @Html.DisplayFor(modelItem => item.Content)
+                        }
+                        else
+                        {
+                    @Html.DisplayFor(modelItem => item.ShortContent)
+                            }
+                        }
+                        }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrlName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PageId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PageId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PageId">Delete</a> <br />
+                    <a asp-action="Choose" asp-route-id="@item.PageId">Relate</a> |
+                    <a asp-route="custom"  asp-route-url="@item.UrlName">Custom</a>
+                </td>
+                   <td>
+                       @{if (Model.chosenId != null && Model.chosenId != item.PageId)
+                           {
+                               @Html.ActionLink("Add Relation", "ChooseTwo", new { firstId = Model.chosenId, secondId = @item.PageId })
+
+                           }
+                       }
+                   </td>
+            </tr>
+            }
+  
+</tbody>
+</table>
+@if (Model.Pager.EndPage > 1)
+{
+    <ul class="pagination">
+        @if (Model.Pager.CurrentPage > 1)
+        {
+            <li>
+                <a href="~/Pages">First</a>
+            </li>
+                            <li>
+                                <a href="~/Pages?page=@(Model.Pager.CurrentPage - 1)@(currOrder)">Previous</a>
+                            </li>
+        }
+
+        @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+        {
+            <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                <a href="~/Pages?page=@page@(currOrder)">@page</a>
+            </li>    }
+
+        @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+        {
+            <li>
+                <a href="~/Pages?page=@(Model.Pager.CurrentPage + 1)@(currOrder)">Next</a>
+            </li>
+                            <li>
+                                <a href="~/Pages?page=@(Model.Pager.TotalPages)@(currOrder)">Last</a>
+                            </li>
+        }
+    </ul>
+}

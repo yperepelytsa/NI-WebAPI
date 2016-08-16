@@ -1,0 +1,116 @@
+@model CMSApp.Models.MyIndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{ 
+    string currOrder = "" ;
+    if (!String.IsNullOrEmpty(Model.Pager.searchTitle))
+    {
+        currOrder = string.Concat("?searchTitle=", Model.Pager.searchTitle);
+    }
+}
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Pages" asp-action="Index">
+    <p>
+        Title: <input type="text" name="SearchTitle">
+     
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Content
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+              Title
+            </th>
+            <th>
+                Url Name
+            </th>
+            <th></th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Items != null)
+        {
+            foreach (var item in Model.Items)
+            {  <tr>
+                <td>
+                    @{if (item.Content != null)
+                        {
+
+                            if (item.Content.Length < 15)
+                            {
+                    @Html.DisplayFor(modelItem => item.Content)
+                            }
+                            else
+                            {
+                    @Html.DisplayFor(modelItem => item.ShortContent)
+                            }
+                        }
+                        }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrlName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PageId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PageId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PageId">Delete</a> 
+                </td>
+               
+            </tr>
+                            }
+                        }
+
+</tbody>
+</table>
+@if (Model.Pager.EndPage > 1)
+{
+    <ul class="pagination">
+        @if (Model.Pager.CurrentPage > 1)
+        {
+            <li>
+                <a href="~/Pages">First</a>
+            </li>
+                            <li>
+                                <a href="~/Pages?page=@(Model.Pager.CurrentPage - 1)@(currOrder)">Previous</a>
+                            </li>
+        }
+
+        @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+        {
+            <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                <a href="~/Pages?page=@page@(currOrder)">@page</a>
+            </li>    }
+
+        @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+        {
+            <li>
+                <a href="~/Pages?page=@(Model.Pager.CurrentPage + 1)@(currOrder)">Next</a>
+            </li>
+                            <li>
+                                <a href="~/Pages?page=@(Model.Pager.TotalPages)@(currOrder)">Last</a>
+                            </li>
+        }
+    </ul>
+}
