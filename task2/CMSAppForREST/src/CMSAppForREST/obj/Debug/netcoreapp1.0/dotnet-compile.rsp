@@ -1,5 +1,5 @@
---temp-output:c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\obj\Debug\netcoreapp1.0\
---out:c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\bin\Debug\netcoreapp1.0\CMSAppForREST.dll
+--temp-output:C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\obj\Debug\netcoreapp1.0\
+--out:C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\bin\Debug\netcoreapp1.0\CMSAppForREST.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -188,32 +188,32 @@
 --reference:C:\Users\User\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\User\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\User\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\obj\Debug\netcoreapp1.0\CMSAppForRESTdotnet-compile.deps.json",CMSAppForREST.deps.json
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Program.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Startup.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Controllers\HomeController.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Controllers\PagesController.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ApplicationUser.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\IPageRepository.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\MyIndexViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\NavLink.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\Page.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\Pager.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\PageRepository.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\RelatedPages.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\ForgotPasswordViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\LoginViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\RegisterViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\ResetPasswordViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\SendCodeViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\VerifyCodeViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\AddPhoneNumberViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\ChangePasswordViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\ConfigureTwoFactorViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\FactorViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\IndexViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\ManageLoginsViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\RemoveLoginViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\SetPasswordViewModel.cs
-c:\users\user\documents\visual studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\VerifyPhoneNumberViewModel.cs
+--resource:"C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\obj\Debug\netcoreapp1.0\CMSAppForRESTdotnet-compile.deps.json",CMSAppForREST.deps.json
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Program.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Startup.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Controllers\HomeController.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Controllers\PagesController.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ApplicationUser.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\IPageRepository.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\MyIndexViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\NavLink.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\Page.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\Pager.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\PageRepository.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\RelatedPages.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\ForgotPasswordViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\LoginViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\RegisterViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\ResetPasswordViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\SendCodeViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\AccountViewModels\VerifyCodeViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\AddPhoneNumberViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\ChangePasswordViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\ConfigureTwoFactorViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\FactorViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\IndexViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\ManageLoginsViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\RemoveLoginViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\SetPasswordViewModel.cs
+C:\Users\User\Documents\Visual Studio 2015\Projects\CMSAppForREST\src\CMSAppForREST\Models\ManageViewModels\VerifyPhoneNumberViewModel.cs
